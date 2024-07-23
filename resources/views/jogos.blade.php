@@ -6,7 +6,9 @@
   <title>Document</title>
 </head>
 <body>
-  <h1> Testando Routes com views</h1>
+  <h1> Testando Routes com views </h1>
+  <p>id: {{ $id }}</p>
+  <p>nome: {{ $nome }}</p>
   {{-- <p>Id dojogo:{{$idJogo}}</p>
   <p>Nome do jogo:{{ $nomeJogo }}</p> --}}
 
