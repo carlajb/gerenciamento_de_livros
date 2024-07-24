@@ -45,5 +45,9 @@ public function update(Request $request, $id){
    Jogo::where('id',$id)->update($data);
    return redirect()->route('jogos-index');
 }
+public function destroy($id){
+   Jogo::where('id',$id)->delete();
+   return redirect()->route('jogos-index');
+}
 
 }
