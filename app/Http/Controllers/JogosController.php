@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jogo;
 use Illuminate\Http\Request;
 
 class JogosController extends Controller
 {
-   public function index()
-   {
-    //  dd('Controller aqui!');
-    $nome= 'Fifa';
-    $id= 1;
-    return view('jogos.index', ['nome'=> $nome, 'id' => $id]);
-   }
+
+public function index()
+{
+   $jogos = Jogo::all();
+   // Suponha que você queira passar a lista de jogos para a view
+   return view('jogos.index', ['jogos' => $jogos]);
+}
 }
