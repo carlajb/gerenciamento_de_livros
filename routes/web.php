@@ -1,15 +1,15 @@
 <?php
-use App\Http\Controllers\JogosController;
+use App\Http\Controllers\gerenciamentoController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('jogos')->group(function(){
-    Route::get('/',[JogosController::class, 'index'])->name('jogos-index');
-    Route::get('/create',[JogosController::class, 'create'])->name('jogos-create');
-    Route::post('/',[JogosController::class, 'store'])->name('jogos-store');
-    Route::get('/{id}/edit',[JogosController::class, 'edit'])->where('id', '[0-9]+')->name('jogos-edit');
-    Route::put('/{id}',[JogosController::class, 'update'])->where('id', '[0-9]+')->name('jogos-update');
-    Route::delete('/{id}',[JogosController::class, 'destroy'])->where('id', '[0-9]+')->name('jogos-destroy');
-});
+
+    Route::get('/', [gerenciamentoController::class, 'index'])->name('gerenciamento-index');
+    Route::get('/create',[gerenciamentoController::class, 'create'])->name('gerenciamento-create');
+    Route::post('/',[gerenciamentoController::class, 'store'])->name('gerenciamento-store');
+    Route::get('/{id}/edit',[gerenciamentoController::class, 'edit'])->where('id', '[0-9]+')->name('gerenciamento-edit');
+    Route::put('/{id}',[gerenciamentoController::class, 'update'])->where('id', '[0-9]+')->name('gerenciamento-update');
+    Route::delete('/{id}',[gerenciamentoController::class, 'destroy'])->where('id', '[0-9]+')->name('gerenciamento-destroy');
+
 
 Route::fallback(function(){
     return "Erro ao localizar a rota.";
