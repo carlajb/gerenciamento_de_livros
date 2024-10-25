@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,3 +65,24 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# gerenciamento_de_livros
+Este projeto é uma aplicação web para gerenciamento de livros. O objetivo principal é permitir que o usuário adicione, visualize, edite e exclua informações de livros, incluindo o nome do autor, biografia, nacionalidade, quantidade, preço e estoque. Como parte do desafio, a aplicação também integra a API da Open Library para preencher automaticamente as informações de autor, biografia e nacionalidade com base no título do livro fornecido pelo usuário.
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/carlajb/gerenciamento_de_livros.git
+cd gerenciamento_de_livros
+
+composer install
+npm install
+
+cp .env.example .env
+
+php artisan key:generate
+
+php artisan migrate
+
+php artisan serve
+
+>>>>>>> 255480537081e3b3c4b987706c8c5defd29924c8
