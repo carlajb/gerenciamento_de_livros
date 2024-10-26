@@ -64,32 +64,32 @@
 </div>
 
 <script>
-    document.getElementById('titulo').addEventListener('input', function () {
-        let titulo = this.value;
+  document.getElementById('titulo').addEventListener('input', function () {
+      let titulo = this.value;
 
-        if (titulo.length > 3) { 
-            fetch(`https://openlibrary.org/search.json?title=${titulo}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.docs && data.docs.length > 0) {
-                        let livroInfo = data.docs[0];  
+      if (titulo.length > 3) { 
+          fetch(`https://openlibrary.org/search.json?title=${titulo}`)
+              .then(response => response.json())
+              .then(data => {
+                  if (data.docs && data.docs.length > 0) {
+                      let livroInfo = data.docs[0];  
 
-                        document.getElementById('autor').value = livroInfo.author_name ? livroInfo.author_name[0] : 'Autor desconhecido';
-                        document.getElementById('autor_biografia').value = livroInfo.subject_facet ? livroInfo.subject_facet.join(', ') : 'Biografia não disponível';
-                        document.getElementById('autor_nacionalidade').value = livroInfo.place ? livroInfo.place.join(', ') :
-                        (livroInfo.publish_place ? livroInfo.publish_place.join(', ') : 'Nacionalidade não disponível');
+                      document.getElementById('autor').value = livroInfo.author_name ? livroInfo.author_name[0] : 'Autor desconhecido';
+                      document.getElementById('autor_biografia').value = livroInfo.subject_facet ? livroInfo.subject_facet.join(', ') : 'Biografia não disponível';
+                      document.getElementById('autor_nacionalidade').value = livroInfo.place ? livroInfo.place.join(', ') :
+                      (livroInfo.publish_place ? livroInfo.publish_place.join(', ') : 'Nacionalidade não disponível');
 
-                    } else {
-                        document.getElementById('autor').value = 'Informação não encontrada';
-                        document.getElementById('autor_biografia').value = 'Informação não encontrada';
-                        document.getElementById('autor_nacionalidade').value = 'Informação não encontrada';
-                    }
-                })
-                .catch(error => {
-                    console.log('Erro ao buscar livro:', error);
-                });
-        }
-    });
+                  } else {
+                      document.getElementById('autor').value = 'Informação não encontrada';
+                      document.getElementById('autor_biografia').value = 'Informação não encontrada';
+                      document.getElementById('autor_nacionalidade').value = 'Informação não encontrada';
+                  }
+              })
+              .catch(error => {
+                  console.log('Erro ao buscar livro:', error);
+              });
+      }
+  });
 </script>
 
 @endsection
