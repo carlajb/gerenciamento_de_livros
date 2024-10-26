@@ -21,7 +21,7 @@
             <th scope="col">Autor</th>
             <th scope="col">Quantidade</th>
             <th scope="col">Preço</th>
-            <th scope="col">Qtn estoque</th>
+            <th scope="col"  >Estoque</th>
             <th scope="col">Autor Biografia</th>
             <th scope="col">Autor Nacionalidade</th>
             <th scope="col">... </th>
